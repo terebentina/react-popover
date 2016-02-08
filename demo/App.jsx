@@ -31,7 +31,7 @@ class App extends React.Component {
 						</Popover>
 					</div>
 
-					<p>The popover component comes with minimal styling by default but if you're feeling nostalgic you can style it however you want: <Popover trigger={<span>web 2.0 nostalgia</span>} position="right" className="web20">popover content</Popover></p>
+					<p>The popover component comes with minimal styling by default but you can style it however you want: <Popover trigger={<span>web 2.0 nostalgia</span>} position="right" className="web20">popover content</Popover></p>
 				</div>
 			</PopoverWrapper>
 		);

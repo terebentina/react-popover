@@ -1,0 +1,29 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: React Popover
+email: dancaragea@gmail.com
+use_sidebar: false
+description: > # this means to ignore newlines until "baseurl:"
+  Smart popover component for React. Click anywhere to close it
+baseurl: "/react-popover" # the subpath of your site, e.g. /blog
+projectGithub: "https://github.com/terebentina/react-popover"
+scripts: ['vendor.js', 'app.js']
+
+# shouldn't need to change anything below
+url: "http://projects.5mins.me" # the base hostname & protocol for your site
+twitter_username: dancaragea
+github_username:  terebentina
+encoding: utf-8
+exclude: ['node_modules']
+highlighter: rouge
+collections:
+- sections
+
+# Build settings
+markdown: kramdown

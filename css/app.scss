@@ -1,0 +1,53 @@
+---
+---
+@charset "utf-8";
+
+$xs: ( max:  767px );
+$sm: ( min:  768px );
+$md: ( min:  992px );
+$lg: ( min: 1200px );
+$sm-only: ( min: map-get($sm, min), max: map-get($md, min) - 1 );
+$md-only: ( min: map-get($md, min), max: map-get($lg, min) - 1 );
+
+$zindexes: (
+		base: 1,
+		header: 5,
+		popover: 10,
+		modalBackdrop: 1000,
+		modal: 1001,
+		messages: 1002,
+);
+
+$colors: (
+		c1: #08c,
+		lightGrey: #f5f5f5,
+		grey: #bbb,
+);
+
+@function zIndex($key) {
+	@if map-has-key($zindexes, $key) {
+		@return map-get($zindexes, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $zindexes.";
+	@return null;
+}
+
+@function color($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
+@mixin breakpoint($map) {
+	$query: "";
+	@if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
+	@if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
+	@if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
+	@media screen and #{$query} { @content; }
+}
+
+@import "normalize", "layout", "syntax-highlighting";

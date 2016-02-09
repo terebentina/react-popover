@@ -1,0 +1,9 @@
+{% if site.use_sidebar and site.sections.size > 0 %}
+<aside>
+	<nav>
+		{% for section in site.sections %}
+			<a href="#{{ section.sid }}">{{ section.title }} <svg class="icon icon-chevron-right"><use xlink:href="#icon-chevron-right"></use></svg></a>
+		{% endfor %}
+	</nav>
+</aside>
+{% endif %}

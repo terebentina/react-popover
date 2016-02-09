@@ -50,4 +50,4 @@ $colors: (
 	@media screen and #{$query} { @content; }
 }
 
-@import "normalize", "layout", "syntax-highlighting";
+@import "normalize", "layout", "syntax-highlighting", "demo", "popover";

@@ -8,12 +8,13 @@
 # Site settings
 title: React Popover
 email: dancaragea@gmail.com
-use_sidebar: false
+use_sidebar: true
 description: > # this means to ignore newlines until "baseurl:"
   Smart popover component for React. Click anywhere to close it
 baseurl: "/react-popover" # the subpath of your site, e.g. /blog
 projectGithub: "https://github.com/terebentina/react-popover"
 scripts: ['vendor.js', 'app.js']
+styles: ['styles.css']
 
 # shouldn't need to change anything below
 url: "http://projects.5mins.me" # the base hostname & protocol for your site

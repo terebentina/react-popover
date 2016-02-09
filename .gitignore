@@ -4,3 +4,5 @@ npm-debug.log
 static
 /.idea
 /.vscode
+/_site
+/.sass-cache

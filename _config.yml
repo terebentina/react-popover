@@ -10,7 +10,7 @@ title: React Popover
 email: dancaragea@gmail.com
 use_sidebar: true
 description: > # this means to ignore newlines until "baseurl:"
-  Smart popover component for React. Click anywhere to close it
+  Smart popover component for React. Click anywhere to dismiss it
 baseurl: "/react-popover" # the subpath of your site, e.g. /blog
 projectGithub: "https://github.com/terebentina/react-popover"
 scripts: ['vendor.js', 'app.js']
@@ -22,9 +22,12 @@ twitter_username: dancaragea
 github_username:  terebentina
 encoding: utf-8
 exclude: ['node_modules']
-highlighter: rouge
 collections:
 - sections
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM

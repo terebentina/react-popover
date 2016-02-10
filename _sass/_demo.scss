@@ -1,7 +1,8 @@
 .box {
-	padding: 100px;
+	display: block;
+	width: 100%;
+	padding: 1em;
 	margin: 0 auto;
-	width: 30vw;
 	border: 1px solid #999;
 }
 
@@ -31,25 +32,9 @@
 	top:1px;
 }
 
-.menu .popover__trigger span {
-	position: relative;
-	display: inline-block;
-	width: 1.25em;
-	height: 0.8em;
-	margin-right: 0.3em;
-	border-top: 0.2em solid #000;
-	border-bottom: 0.2em solid #000;
+.menu .popover__trigger svg {
+	color: #000;
 }
-
-.menu .popover__trigger span:before {
-	content: "";
-	position: absolute;
-	top: 0.3em;
-	left: 0;
-	width: 100%;
-	border-top: 0.2em solid #000;
-}
-
 
 .menu .popover__content {
 	border-radius: 3px;

@@ -15,6 +15,10 @@
 
 	<link href="{{ "/css/app.css" | prepend: site.baseurl }}" rel="stylesheet">
 
+	{% for style in site.styles %}
+	<link href="{{ style | prepend: '/' | prepend: site.baseurl }}" rel="stylesheet" />
+	{% endfor %}
+
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<script type="text/javascript">

@@ -1,6 +1,6 @@
 {
   "name": "@terebentina/react-popover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smart popover component for React. Closes when you click away, no need to reclick the trigger button to close it",
   "main": "lib/index.js",
   "scripts": {

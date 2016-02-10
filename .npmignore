@@ -1,1 +1,6 @@
 demo
+/.idea
+/.vscode
+/_site
+/.sass-cache
+src

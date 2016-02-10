@@ -15,6 +15,7 @@ npm i @terebentina/react-popover -S
 import React from 'react';
 import Popover from '@terebentina/react-popover';
 
+// optional, you can bring your own styles if you want
 import '@terebentina/react-popover/lib/styles.css';
 
 class MyComponent extends React.Component {

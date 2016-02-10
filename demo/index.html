@@ -8,13 +8,13 @@
 	<style>
 		html, body, #react, #react > div {
 			height: 100%;
+			margin: 0;
+			padding: 0;
 		}
 
 		.box {
-			padding: 100px;
+			padding: 100px !important;
 			margin: 0 auto;
-			width: 30vw;
-			border: 1px solid #999;
 		}
 
 		.popover {
@@ -43,25 +43,29 @@
 			top:1px;
 		}
 
-		.menu .popover__trigger span {
-			position: relative;
-			display: inline-block;
-			width: 1.25em;
-			height: 0.8em;
-			margin-right: 0.3em;
-			border-top: 0.2em solid #000;
-			border-bottom: 0.2em solid #000;
-		}
-
-		.menu .popover__trigger span:before {
-			content: "";
+		.web20 .popover__content .beta {
 			position: absolute;
-			top: 0.3em;
-			left: 0;
-			width: 100%;
-			border-top: 0.2em solid #000;
+			right: -13px;
+			top: -9px;
+			transform: rotate(-10deg);
+			box-shadow:inset 0px 1px 0px 0px #caefab;
+			background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+			background-color:#77d42a;
+			border-radius:6px;
+			border:1px solid #268a16;
+			cursor:pointer;
+			color:#306108;
+			font-weight:bold;
+			padding:5px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #aade7c;
 		}
 
+		.menu .popover__trigger {
+			color: #000;
+			font-weight: bold;
+			text-decoration: none;
+		}
 
 		.menu .popover__content {
 			border-radius: 3px;
@@ -81,7 +85,6 @@
 			background-color: rgba(00, 188, 212, 1) !important;
 			color: #000;
 		}
-
 	</style>
 </head>
 <body>

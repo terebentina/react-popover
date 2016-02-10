@@ -32,7 +32,7 @@ class SubComponent extends React.Component {
   render() {
     return (
       <div>
-        <Popover trigger="click me" />popover content</Popover>
+        <Popover trigger="click me">popover content</Popover>
       </div>
     );
   }
@@ -61,21 +61,19 @@ class App extends React.Component {
 // SubComponent.jsx same as above
 ```
 
-The `PopoverWrapper` component returns a `<div>` with an `onClick` event attached. When the click bubbles up through the DOM up to `PopoverWrapper`, it is caught there and a notification is then sent to 
+The `PopoverWrapper` component returns a `<div>` with an `onClick` event attached. When the click on the trigger bubbles up through the DOM up to `PopoverWrapper`, it is caught there and a notification is then sent to 
  all popovers to close.
  
  Obviously, you could have kept the original structure and wrapped everything in PopoverWrapper:
+
 ```js
-// App.jsx
-class App extends React.Component {
-  render() {
-    return (
-      <PopoverWrapper>
-        <div className="myAwesomeApp">
-          <SubComponent />
-        </div>
-      </PopoverWrapper>
-    );
-  }
+render() {
+  return (
+    <PopoverWrapper>
+      <div className="myAwesomeApp">
+        <SubComponent />
+      </div>
+    </PopoverWrapper>
+  );
 }
 ```

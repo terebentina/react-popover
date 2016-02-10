@@ -22,4 +22,4 @@ class MyComponent extends React.Component {
     );
 ```
 
-Importing the default styles is optional. You can either import them from here or from your sass files and overwrite or not import them at all and implement them yourself. The html structure is very [simple and clear](#htmlstruct) 
+Importing the default styles is optional. You can either import them from here or from your sass files and overwrite or not import them at all and implement them yourself. The html structure is very [simple and clear](#htmlstruct).

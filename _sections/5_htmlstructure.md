@@ -16,5 +16,5 @@ The popover is rendered with the following html:
 ```
 
 - `.popover--active` is added when the popover is shown (and removed when hidden).
-- `.popover--top`, `.popover--bottom`, `.popover--left`, `.popover--right` the position of the content relative to the trigger
-- any class you add to the popover component is also added on `div.popover` (`<Popover className="foo" ...`) 
+- `.popover--top`, `.popover--bottom`, `.popover--left`, `.popover--right` the position of the content relative to the trigger.
+- any class you add to the popover component is also added on `div.popover` (`<Popover className="foo" ...`). See below.

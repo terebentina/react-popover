@@ -31,17 +31,20 @@ div {
 }
 
 body {
-	display: flex;
-	flex-flow: column nowrap;
-	flex: 1 0 auto;
-	align-items: stretch;
-	justify-content: flex-start;
-	min-height: 100vh;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
 	background-color: #FFF;
+}
+
+.wrapper {
+	display: flex;
+	flex-flow: row wrap;
+
+	header, main, footer {
+		flex: 1 100%;
+	}
 }
 
 a {
@@ -102,7 +105,7 @@ h1 {
 	justify-content: center;
 }
 
-body > header {
+.wrapper > header {
 	background: transparent linear-gradient(to top, #212121, #373737);
 
 	.container {
@@ -160,7 +163,7 @@ body > header {
 	}
 }
 
-body > main {
+.wrapper > main {
 	flex-grow: 1;
 
 	.container {
@@ -255,7 +258,7 @@ body > main {
 	}
 }
 
-body > footer {
+.wrapper > footer {
 	border-top: 1px solid darken(color(lightGrey), 10%);
 	background-color: color(lightGrey);
 

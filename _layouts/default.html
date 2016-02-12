@@ -2,19 +2,42 @@
 <html>
 {% include head.html %}
 <body>
-	{% include header.html %}
-
-	<main class="centered row">
-		<div class="container row">
-			<div class="content">
-			{{ content }}
+	<div class="wrapper">
+		<header class="centered row">
+			<div class="container column">
+				<a href="{{ site.projectGithub }}"><span>View on GitHub</span> <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
+				<h1>{{ site.title | escape }}</h1>
+				<h2>{{ site.description }}</h2>
 			</div>
+		</header>
 
-			{% include sidebar.html %}
-		</div>
-	</main>
+		<main class="centered row">
+			<div class="container row">
+				<div class="content">
+				{{ content }}
+				</div>
 
-	{% include footer.html %}
+				{% include sidebar.html %}
+			</div>
+		</main>
+
+		<footer class="centered row">
+			<div class="container row">
+				<div class="column">
+					<h2>{{ site.title }}</h2>
+					{% if site.github_username %}
+					<a class="link-with-icon" href="https://github.com/{{ site.github_username }}"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg> {{ site.github_username }}</a>
+					{% endif %}
+
+					{% if site.twitter_username %}
+					<a class="link-with-icon" href="https://github.com/{{ site.twitter_username }}"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg> {{ site.twitter_username }}</a>
+					{% endif %}
+				</div>
+
+				<div>{{ site.description }}</div>
+			</div>
+		</footer>
+	</div>
 
 	<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<defs>

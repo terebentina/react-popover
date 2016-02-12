@@ -78,6 +78,14 @@ h1 {
 	@include breakpoint($lg) {
 		width: 1170px;
 	}
+
+	@include breakpoint($md) {
+		padding: 0 1em;
+	}
+
+	@include breakpoint($sm) {
+		padding: 0 .5em;
+	}
 }
 
 .row {
@@ -101,6 +109,10 @@ body > header {
 		color: #FFF;
 		padding: 3em 0;
 		z-index: zIndex(header);
+
+		@include breakpoint($xs) {
+			margin: 0 .5em;
+		}
 
 		& > a {
 			display: flex;
@@ -152,10 +164,17 @@ body > main {
 	flex-grow: 1;
 
 	.container {
+
+		@include breakpoint($xs) {
+			flex-wrap: wrap;
+			margin: 0 .5em;
+		}
+
 		.content {
 			flex: 1 1;
 			align-items: flex-start;
 			flex-flow: column nowrap;
+			order: 2;
 		}
 
 		section {
@@ -173,6 +192,10 @@ body > main {
 			h3 {
 				font-size: 1.6em;
 			}
+
+			&:first-of-type h2 {
+				margin-top: 12px;
+			}
 		}
 	}
 
@@ -182,6 +205,13 @@ body > main {
 		padding: 15px 15px 15px 0;
 		margin-right: 30px;
 		margin-top: 2em;
+		order: 1;
+
+		@include breakpoint($xs) {
+			flex: 1 0 100%;
+			margin: .5em 0 0 0;
+			padding: 0;
+		}
 
 		nav {
 			@extend %flexbox-container;

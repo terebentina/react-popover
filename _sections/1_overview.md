@@ -12,4 +12,4 @@ I am always trying to make my components behave as natural / native-like as poss
  
 You can use the popover to display contextual information or even for menus...maybe a "more links" sort of menu. 
 
-The stying for the popover is minimal but you can bring your own styles 
+The stying for the popover is minimal but you can bring your own styles.

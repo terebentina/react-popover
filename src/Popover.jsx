@@ -34,7 +34,7 @@ export const popoverStore = new PopoverStore();
 
 export class Popover extends React.Component {
 	static propTypes = {
-		trigger: React.PropTypes.element,
+		trigger: React.PropTypes.any.isRequired,
 		position: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 		className: React.PropTypes.string,
 		children: React.PropTypes.node,

@@ -35,8 +35,8 @@
     "webpack": "^1.12.12"
   },
   "peerDependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react": "^0.14.0 || 15.x.x",
+    "react-dom": "^0.14.0 || 15.x.x"
   },
   "keywords": [
     "react",

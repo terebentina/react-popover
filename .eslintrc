@@ -3,6 +3,7 @@
   "extends": "airbnb",
 	"rules": {
 	  "indent": [2, "tab", {"SwitchCase": 1}],
+      "react/jsx-indent": [2, "tab"],
 	  "spaced-comment": 0,
       "func-names": 0,
       "no-console": 0,

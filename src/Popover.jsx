@@ -5,7 +5,7 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 //import './Popover.scss';
 
 class PopoverStore {
-	callbacks = {};
+	callback = null;
 
 	on(event, cb) {
 		if (!this.callbacks[event]) {
@@ -28,6 +28,23 @@ class PopoverStore {
 			}
 		}
 	}
+
+	hide() {
+		this.register(null);
+	}
+
+	register(cb) {
+		if (this.callback) {
+			this.callback();
+		}
+		this.callback = cb;
+	}
+
+	unregister(cb) {
+		if (this.callback === cb) {
+			this.callback = null;
+		}
+	}
 }
 
 export const popoverStore = new PopoverStore();
@@ -48,43 +65,40 @@ export class Popover extends React.Component {
 		isPopoverShown: false,
 	};
 
-	componentDidMount() {
-		popoverStore.on('hide', ::this.hide);
-	}
-
 	shouldComponentUpdate = shouldPureComponentUpdate;
 
-	componentWillUnmount() {
-		popoverStore.off('hide', ::this.hide);
-	}
+	componentWillUnmount = () => {
+		popoverStore.unregister(this.hide);
+	};
 
-	show() {
+	show = () => {
 		this.immune = true;
+		popoverStore.register(this.hide);
 		this.setState({ isPopoverShown: true });
-	}
+	};
 
-	hide() {
+	hide = () => {
 		if (!this.immune) {
 			this.setState({ isPopoverShown: false });
 		}
 		this.immune = false;
-	}
+	};
 
-	toggle(e) {
+	toggle = (e) => {
 		e.preventDefault();
 		if (this.state.isPopoverShown) {
 			this.hide();
 		} else {
 			this.show();
 		}
-	}
+	};
 
 	render() {
 		const popoverClasses = classnames('popover', this.props.className, `popover--${this.props.position}`, { 'popover--active': this.state.isPopoverShown });
 
 		return (
 			<div className={popoverClasses}>
-				<a href="#" onClick={::this.toggle} className="popover__trigger">{this.props.trigger}</a>
+				<a href="#" onClick={this.toggle} className="popover__trigger">{this.props.trigger}</a>
 				<div className="popover__content">
 					{this.props.children}
 				</div>
@@ -99,7 +113,7 @@ export class PopoverWrapper extends React.Component {
 	};
 
 	hidePopovers() {
-		popoverStore.trigger('hide');
+		popoverStore.hide();
 	}
 
 	render() {

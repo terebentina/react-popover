@@ -29,10 +29,12 @@ export const popoverStore = new PopoverStore();
 
 export class Popover extends React.Component {
 	static propTypes = {
-		trigger: React.PropTypes.any.isRequired,
-		position: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 		className: React.PropTypes.string,
 		children: React.PropTypes.node,
+		trigger: React.PropTypes.any.isRequired,
+		position: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+		onShow: React.PropTypes.func,
+		onHide: React.PropTypes.func,
 	};
 
 	static defaultProps = {
@@ -53,6 +55,9 @@ export class Popover extends React.Component {
 		this.immune = true;
 		popoverStore.register(this.hide);
 		this.setState({ isPopoverShown: true });
+		if (this.props.onShow) {
+			this.props.onShow();
+		}
 	};
 
 	hide = () => {
@@ -60,6 +65,9 @@ export class Popover extends React.Component {
 			this.setState({ isPopoverShown: false });
 		}
 		this.immune = false;
+		if (this.props.onHide) {
+			this.props.onHide();
+		}
 	};
 
 	toggle = (e) => {

@@ -7,28 +7,6 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 class PopoverStore {
 	callback = null;
 
-	on(event, cb) {
-		if (!this.callbacks[event]) {
-			this.callbacks[event] = [];
-		}
-		this.callbacks[event].push(cb);
-	}
-
-	trigger(event) {
-		if (this.callbacks[event]) {
-			this.callbacks[event].map((cb) => cb());
-		}
-	}
-
-	off(event, cb) {
-		if (this.callbacks[event]) {
-			const idx = this.callbacks[event].indexOf(cb);
-			if (idx > -1) {
-				this.callbacks = [...this.callbacks.slice(0, idx), ...this.callbacks.slice(idx + 1)];
-			}
-		}
-	}
-
 	hide() {
 		this.register(null);
 	}

@@ -51,31 +51,29 @@ export class Popover extends React.Component {
 		popoverStore.unregister(this.hide);
 	};
 
-	show = () => {
-		this.immune = true;
+	show = (e) => {
 		popoverStore.register(this.hide);
 		this.setState({ isPopoverShown: true });
 		if (this.props.onShow) {
-			this.props.onShow();
+			this.props.onShow(e);
 		}
 	};
 
-	hide = () => {
-		if (!this.immune) {
-			this.setState({ isPopoverShown: false });
-		}
-		this.immune = false;
+	hide = (e) => {
+		this.setState({ isPopoverShown: false });
 		if (this.props.onHide) {
-			this.props.onHide();
+			this.props.onHide(e);
 		}
 	};
 
 	toggle = (e) => {
 		e.preventDefault();
+		e.stopPropagation();
 		if (this.state.isPopoverShown) {
-			this.hide();
+			this.hide(e);
+			popoverStore.unregister(this.hide);
 		} else {
-			this.show();
+			this.show(e);
 		}
 	};
 
@@ -110,5 +108,6 @@ export class PopoverWrapper extends React.Component {
 		);
 	}
 }
+
 
 export default Popover;

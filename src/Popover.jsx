@@ -30,6 +30,7 @@ export const popoverStore = new PopoverStore();
 export class Popover extends React.Component {
 	static propTypes = {
 		className: React.PropTypes.string,
+		triggerClassName: React.PropTypes.string,
 		children: React.PropTypes.node,
 		trigger: React.PropTypes.any.isRequired,
 		position: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
@@ -39,6 +40,7 @@ export class Popover extends React.Component {
 
 	static defaultProps = {
 		position: 'top',
+		triggerClassName: 'popover__trigger',
 	};
 
 	state = {
@@ -78,11 +80,12 @@ export class Popover extends React.Component {
 	};
 
 	render() {
-		const popoverClasses = classnames('popover', this.props.className, `popover--${this.props.position}`, { 'popover--active': this.state.isPopoverShown });
+		const { className, triggerClassName, position, trigger } = this.props;
+		const popoverClasses = classnames('popover', className, `popover--${position}`, { 'popover--active': this.state.isPopoverShown });
 
 		return (
 			<div className={popoverClasses}>
-				<a href="#" onClick={this.toggle} className="popover__trigger">{this.props.trigger}</a>
+				<a href="" onClick={this.toggle} className={triggerClassName}>{trigger}</a>
 				<div className="popover__content">
 					{this.props.children}
 				</div>

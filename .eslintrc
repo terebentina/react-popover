@@ -1,17 +1,47 @@
 {
   "parser": "babel-eslint",
   "extends": "airbnb",
-	"rules": {
-	  "indent": [2, "tab", {"SwitchCase": 1}],
-      "react/jsx-indent": [2, "tab"],
-	  "spaced-comment": 0,
-      "func-names": 0,
-      "no-console": 0,
-      "eqeqeq": 0,
-      "id-length": 0,
-      "no-nested-ternary": 1,
-      "no-use-before-define": 0,
-      "space-before-function-paren": 0,
-      "max-len": 0
-	}
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
+    }
+  },
+  "ecmaFeatures": {
+    "generators": true
+  },
+  "rules": {
+    "no-underscore-dangle": 0,
+    "spaced-comment": 0,
+    "func-names": 0,
+    "no-console": 0,
+    "eqeqeq": 0,
+    "id-length": 0,
+    "no-nested-ternary": 1,
+    "no-use-before-define": 0,
+    "space-before-function-paren": 0,
+    "max-len": 0,
+    "consistent-return": 0,
+    "newline-per-chained-call": 0,
+    "global-require": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-plusplus": 0,
+    "arrow-parens": ["error", "always"],
+    "react/forbid-prop-types": ["error", { "forbid": ["any", "array"] }],
+    "react/no-unused-prop-types": ["error", {"skipShapeProps": true}],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }]
+  },
+  "globals": {
+    "localStorage": true,
+    "document": true,
+    "window": true
+  }
 }
